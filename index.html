@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mac Shortcut Command Center</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Mac automation workspace</p>
+          <h1>Mac 快捷键指挥台</h1>
+          <p class="lead">
+            给不会写代码的人用的 Mac 自动化小项目：整理本机可用的快捷键工具，
+            再用简单脚本把常用动作变成“一点就跑”。
+          </p>
+        </div>
+        <div class="status-panel" aria-label="Environment status">
+          <div>
+            <span class="status-dot"></span>
+            <strong>已检测到</strong>
+          </div>
+          <ul>
+            <li>快捷指令 Shortcuts</li>
+            <li>Automator</li>
+            <li>AppleScript / System Events</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="grid-section" aria-labelledby="tools-title">
+        <div class="section-heading">
+          <p class="eyebrow">Tools found on this Mac</p>
+          <h2 id="tools-title">可以用来“一键执行”的工具</h2>
+        </div>
+
+        <div class="tool-grid">
+          <article class="tool-card is-ready">
+            <div class="tool-icon">⌘</div>
+            <h3>快捷指令</h3>
+            <p>适合做常用动作入口，可以设置菜单栏、服务菜单和键盘快捷键。</p>
+            <span>已安装</span>
+          </article>
+
+          <article class="tool-card is-ready">
+            <div class="tool-icon">◆</div>
+            <h3>Automator</h3>
+            <p>适合把 AppleScript 包成一个可以双击打开的 App。</p>
+            <span>已安装</span>
+          </article>
+
+          <article class="tool-card">
+            <div class="tool-icon">R</div>
+            <h3>Raycast</h3>
+            <p>第三方启动器，适合搜索命令、绑定快捷键、运行脚本。</p>
+            <span>未安装</span>
+          </article>
+
+          <article class="tool-card">
+            <div class="tool-icon">H</div>
+            <h3>Hammerspoon</h3>
+            <p>高级自动化工具，适合复杂窗口管理和键盘宏。</p>
+            <span>未安装</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="workflow" aria-labelledby="workflow-title">
+        <div>
+          <p class="eyebrow">Recommended workflow</p>
+          <h2 id="workflow-title">最适合你的用法</h2>
+        </div>
+
+        <ol class="steps">
+          <li>
+            <strong>先用快捷指令</strong>
+            <p>把常用命令做成 Shortcut，给它分配键盘快捷键。</p>
+          </li>
+          <li>
+            <strong>需要模拟按键时用 AppleScript</strong>
+            <p>脚本可以让 Mac 自动按下 Command、Option、Shift 等组合键。</p>
+          </li>
+          <li>
+            <strong>以后需要更强再装 Raycast</strong>
+            <p>Raycast 更适合普通用户：搜索、点击、绑定快捷键都很顺手。</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="script-preview" aria-labelledby="script-title">
+        <div class="section-heading">
+          <p class="eyebrow">Example script</p>
+          <h2 id="script-title">自动按快捷键示例</h2>
+        </div>
+        <pre><code>tell application "System Events"
+  key code 49 using {command down}
+end tell</code></pre>
+        <p>
+          这个示例会模拟按下 Command + Space。第一次使用时，macOS 会要求给运行脚本的 App 开启辅助功能权限。
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
