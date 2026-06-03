@@ -32,6 +32,23 @@ osascript scripts/press-hotkey.applescript
 
 里允许运行脚本的 App 控制电脑。
 
+## 更稳的微信输入法切换方案
+
+如果只是想切到微信输入法中文，不建议依赖 `Command + Space`，因为它可能打开 Spotlight。
+
+本项目提供了一个 Swift helper：
+
+```zsh
+swiftc scripts/select-wetype.swift -o select-wetype
+./select-wetype
+```
+
+它会直接调用 macOS 输入法接口，选择：
+
+```text
+com.tencent.inputmethod.wetype.pinyin
+```
+
 ## 本地预览网页
 
 ```zsh

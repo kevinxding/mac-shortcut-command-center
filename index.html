@@ -79,8 +79,8 @@
             <p>把常用命令做成 Shortcut，给它分配键盘快捷键。</p>
           </li>
           <li>
-            <strong>需要模拟按键时用 AppleScript</strong>
-            <p>脚本可以让 Mac 自动按下 Command、Option、Shift 等组合键。</p>
+            <strong>切输入法用专用 helper</strong>
+            <p>直接调用 macOS 输入法接口，比模拟 Command + Space 更稳。</p>
           </li>
           <li>
             <strong>以后需要更强再装 Raycast</strong>
@@ -92,13 +92,12 @@
       <section class="script-preview" aria-labelledby="script-title">
         <div class="section-heading">
           <p class="eyebrow">Example script</p>
-          <h2 id="script-title">自动按快捷键示例</h2>
+          <h2 id="script-title">切到微信输入法示例</h2>
         </div>
-        <pre><code>tell application "System Events"
-  key code 49 using {command down}
-end tell</code></pre>
+        <pre><code>swiftc scripts/select-wetype.swift -o select-wetype
+./select-wetype</code></pre>
         <p>
-          这个示例会模拟按下 Command + Space。第一次使用时，macOS 会要求给运行脚本的 App 开启辅助功能权限。
+          这个示例会直接选择微信输入法中文拼音，不依赖 Spotlight 或键盘快捷键设置。
         </p>
       </section>
     </main>
